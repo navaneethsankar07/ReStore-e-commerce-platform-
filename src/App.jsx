@@ -6,11 +6,13 @@ import Sell from './pages/Sell'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
 import Products from './pages/Products'
+import AuthListener from './components/AuthListner'
 
 function App() {
-
+    AuthListener()
   return (
         <Router>
+          
           <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>

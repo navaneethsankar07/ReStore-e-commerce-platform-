@@ -3,6 +3,7 @@ import authReducer from '../redux/authSlice'
 import productReducer from '../redux/productSlice'
 import cartReducer from '../redux/cartSlice'
 import checkoutReducer from'../redux/checkoutSlice'
+import calcReducer from '../redux/calcSlice'
 
 const store = configureStore({
     reducer:{
@@ -10,6 +11,7 @@ const store = configureStore({
         products:productReducer,
         cart:cartReducer,
         checkout:checkoutReducer,
+        calc:calcReducer,
     }
 })
 

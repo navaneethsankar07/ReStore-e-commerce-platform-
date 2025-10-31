@@ -1,11 +1,13 @@
 import { onAuthStateChanged } from 'firebase/auth'
 import React,{useEffect} from 'react'
 import {useDispatch} from 'react-redux'
-import { loginSuccess, logout } from '../redux/authSlice'
+import { loginSuccess, logout, setLoading } from '../redux/authSlice'
 import { auth } from '../firebase/firebase'
 function AuthListener() {
     const dispatch = useDispatch()
     useEffect(()=>{
+         dispatch(setLoading(true));
+
         const unsubscribe = onAuthStateChanged(auth,user=>{
             if(user){
                 const userData = {
@@ -15,10 +17,13 @@ function AuthListener() {
                     profileImg:user.photoURL 
                 }
                 dispatch(loginSuccess(userData))
+                console.log("User from listener:", userData)
+
             }
             else{
                 dispatch(logout())
             }
+            dispatch(setLoading(false));
         })
         return ()=> unsubscribe()
     },[dispatch])

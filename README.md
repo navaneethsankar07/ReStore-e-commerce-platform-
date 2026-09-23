@@ -1,16 +1,103 @@
-# React + Vite
+# ReStore – C2C Marketplace Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ReStore is a modern C2C marketplace platform designed for buying and selling pre-owned items. It provides a simple and responsive interface for users to list products, browse available items, and manage their listings.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* User authentication with Firebase Authentication
+* Create, update, and delete product listings
+* Browse and search available products
+* Product details with images and seller information
+* Image upload and management using Cloudinary
+* Shopping cart functionality
+* State management using Redux Toolkit
+* Responsive design for desktop and mobile devices
+* Real-time data management with Firebase Firestore
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
 
-## Expanding the ESLint configuration
+* React.js
+* Vite
+* Redux Toolkit
+* React Router
+* CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend & Services
+
+* Firebase Authentication
+* Firebase Firestore
+* Cloudinary
+
+## Getting Started
+
+### Prerequisites
+
+* Node.js
+* npm
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/navaneethsankar07/ReStore.git
+cd ReStore
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file in the project root and configure the required Firebase and Cloudinary environment variables.
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+
+VITE_CLOUDINARY_CLOUD_NAME=your_cloud_name
+VITE_CLOUDINARY_UPLOAD_PRESET=your_upload_preset
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:5173
+```
+
+## Environment Variables
+
+The application requires Firebase and Cloudinary configuration through environment variables.
+
+Do not commit your `.env` file or expose private credentials in the repository.
+
+## Production Build
+
+Create a production build with:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## License
+
+This project was developed as a personal project for learning and demonstrating modern frontend development practices.
